@@ -44,13 +44,14 @@ public class Examen {
                 BajaNota = notas[i];
             }
 
-            System.out.println("La nota más alta hasta ahora es: " + AltaNota);
-            System.out.println("La nota más baja hasta ahora es: " + BajaNota);
+          
         }
 
         double promedio = (double) sumaNotas / numAsignaturas;
         System.out.println("El promedio general es: " + promedio);
         System.out.println("Total de asignaturas aprobadas: " + aprobadas);
+        System.out.println("La nota más baja hasta ahora es: " + BajaNota);
+        System.out.println("La nota más alta hasta ahora es: " + AltaNota);
 
     
         if (promedio >= 5 && aprobadas == numAsignaturas) {
