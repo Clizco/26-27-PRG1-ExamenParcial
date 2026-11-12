@@ -1,19 +1,15 @@
 public class Examen {
     public static void main(String[] args) {
-        // Execucion de Examen parcial PRG1 
-        System.out.println("Examen parcial.");
-
-        // Peticion de edad al usuario por consola
-        int edad = scanner.nextInt();
-        System.out.println("Edad: " + edad);
-       
-        // Calcular si es mayor de edad o es menor de edad
-        int mayor = 18;
-        int edad = scanner.nextInt();
-        if (edad >= mayor) {
-            System.out.println("Es mayor de edad.");
-        } else {
-            System.out.println("Es menor de edad.");
+        // Pedir edad valida entre 16 y 99
+        int edad = 0;
+        while (edad < 16 || edad > 99) {
+            System.out.print("Ingrese su edad (entre 16 y 99): ");
+            edad = Integer.parseInt(System.console().readLine());
+            if (edad < 16 || edad > 99) {
+                System.out.println("Edad invalida. Intente de nuevo.");
+            }
+        }
+        
         
          
     }
