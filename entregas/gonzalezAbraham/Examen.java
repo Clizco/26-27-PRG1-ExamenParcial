@@ -1,33 +1,45 @@
+import java.util.Scanner;
+
 public class Examen {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         int numAsignaturas = 0;
+
         do {
             System.out.print("Ingrese el número de asignaturas: ");
-            numAsignaturas = Integer.parseInt(System.console().readLine());
+            numAsignaturas = scanner.nextInt();
             if (numAsignaturas < 1 || numAsignaturas > 10) {
                 System.out.println("El número de asignaturas debe estar entre 1 y 10.");
             }
         } while (numAsignaturas < 1 || numAsignaturas > 10);
 
         int[] notas = new int[numAsignaturas];
+        int sumaNotas = 0;
+        int aprobadas = 0;
+
         for (int i = 0; i < numAsignaturas; i++) {
             do {
                 System.out.print("Ingrese la nota de la asignatura " + (i + 1) + ": ");
-                notas[i] = Integer.parseInt(System.console().readLine());
-                // pedir promedio
-                promedio = notas[i] / 2;
-                system.out.println("El promedio es: " + promedio);
+                notas[i] = scanner.nextInt();
+                if (notas[i] < 0 || notas[i] > 10) {
+                    System.out.println("La nota debe estar entre 0 y 10.");
+                }
             } while (notas[i] < 0 || notas[i] > 10);
-            
 
-        
+            sumaNotas += notas[i];
 
+            if (notas[i] >= 5) {
+                System.out.println("La asignatura " + (i + 1) + " está aprobada.");
+                aprobadas++;
+            } else {
+                System.out.println("La asignatura " + (i + 1) + " está reprobada.");
+            }
+        }
 
+        double promedio = (double) sumaNotas / numAsignaturas;
+        System.out.println("El promedio general es: " + promedio);
+        System.out.println("Total de asignaturas aprobadas: " + aprobadas);
 
-  
-
-        
-        
-         
+        scanner.close();
     }
 }
