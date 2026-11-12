@@ -16,6 +16,7 @@ public class Examen {
         int[] notas = new int[numAsignaturas];
         int sumaNotas = 0;
         int aprobadas = 0;
+        int AltaNota = 0;
 
         for (int i = 0; i < numAsignaturas; i++) {
             do {
@@ -34,13 +35,19 @@ public class Examen {
             } else {
                 System.out.println("La asignatura " + (i + 1) + " está reprobada.");
             }
-        }
 
+            if (notas[i] > AltaNota) {
+                system.out.println("La nota más alta hasta ahora es: " + notas[i]);
+            }
+
+        
+        }
         double promedio = (double) sumaNotas / numAsignaturas;
+
         System.out.println("El promedio general es: " + promedio);
         System.out.println("Total de asignaturas aprobadas: " + aprobadas);
 
         scanner.close();
     }
-    
+
 }
