@@ -42,4 +42,5 @@ public class Examen {
 
         scanner.close();
     }
+    
 }
