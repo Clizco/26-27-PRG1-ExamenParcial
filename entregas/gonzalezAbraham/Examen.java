@@ -1,9 +1,14 @@
 public class Examen {
     public static void main(String[] args) {
-        int asignaturas = scanner .nextInt();
-        system.out.println("Ingrese el número de asignaturas: " + asignaturas);
+        int numAsignaturas = 0;
+        do {
+            System.out.print("Ingrese el número de asignaturas: ");
+            numAsignaturas = Integer.parseInt(System.console().readLine());
+        } while (numAsignaturas < 1 || numAsignaturas > 10);
 
-        console.log("Este es tu total de materias: " + asignaturas);
+
+
+  
 
         
         
