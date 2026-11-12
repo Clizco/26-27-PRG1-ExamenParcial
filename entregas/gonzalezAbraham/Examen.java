@@ -17,6 +17,7 @@ public class Examen {
         int sumaNotas = 0;
         int aprobadas = 0;
         int AltaNota = 0;
+        int BajaNota = 10;
 
         for (int i = 0; i < numAsignaturas; i++) {
             do {
@@ -37,17 +38,27 @@ public class Examen {
             }
 
             if (notas[i] > AltaNota) {
-                system.out.println("La nota más alta hasta ahora es: " + notas[i]);
+                AltaNota = notas[i];
+            }
+            if (notas[i] < BajaNota) {
+                BajaNota = notas[i];
             }
 
-        
+            System.out.println("La nota más alta hasta ahora es: " + AltaNota);
+            System.out.println("La nota más baja hasta ahora es: " + BajaNota);
         }
-        double promedio = (double) sumaNotas / numAsignaturas;
 
+        double promedio = (double) sumaNotas / numAsignaturas;
         System.out.println("El promedio general es: " + promedio);
         System.out.println("Total de asignaturas aprobadas: " + aprobadas);
 
+    
+        if (promedio >= 5 && aprobadas == numAsignaturas) {
+            System.out.println("El alumno promociona.");
+        } else {
+            System.out.println("El alumno recupera.");
+        }
+
         scanner.close();
     }
-
 }
